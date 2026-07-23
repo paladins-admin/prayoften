@@ -310,18 +310,22 @@ EMAILJS
 emailjs.init("ErdGvMKURLAY7FaKH");
 
 const modal = document.getElementById("enquiryModal");
-const openButton = document.getElementById("openEnquiry");
+
+const openButtons = document.querySelectorAll(
+    "#openEnquiry, #openEnquiryBottom"
+);
+
 const closeButton = document.getElementById("closeModal");
 
-if(openButton){
+openButtons.forEach(button => {
 
-    openButton.addEventListener("click",()=>{
+    button.addEventListener("click", () => {
 
         modal.classList.add("active");
 
     });
 
-}
+});
 
 if(closeButton){
 
