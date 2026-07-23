@@ -1,0 +1,9 @@
+User-agent: *
+
+Allow: /
+
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.well-known/
+
+Sitemap: https://prayoften.com.au/sitemap.xml
