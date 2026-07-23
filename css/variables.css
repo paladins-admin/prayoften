@@ -1,0 +1,258 @@
+/*
+==========================================================
+PRAY OFTEN
+Design System
+==========================================================
+*/
+
+:root {
+
+/* ==========================================================
+   Typography
+========================================================== */
+
+    --font-primary: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    --font-weight-thin: 100;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+
+/* ==========================================================
+   Brand Colours
+========================================================== */
+
+    --white: #ffffff;
+
+    --cloud: #fbfcfe;
+
+    --mist: #f7f9fc;
+
+    --silver-50: #f4f7fb;
+    --silver-100: #edf2f7;
+    --silver-200: #dde5ef;
+    --silver-300: #cad5e2;
+
+    --sky-50: #eef8ff;
+    --sky-100: #dcedff;
+    --sky-200: #c4e0ff;
+    --sky-300: #acd2ff;
+
+    --blue-300: #75b7ff;
+    --blue-400: #5aa6ff;
+    --blue-500: #3f92ff;
+    --blue-600: #2e7ef3;
+    --blue-700: #1f6fe2;
+
+    --navy: #0f1728;
+
+    --text-primary: #172033;
+    --text-secondary: #556176;
+    --text-muted: #8390a4;
+
+    --success: #3fbf83;
+    --warning: #ffb547;
+    --danger: #ef5350;
+
+/* ==========================================================
+   Gradients
+========================================================== */
+
+    --gradient-background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #fbfdff 28%,
+            #f7fbff 55%,
+            #ffffff 100%
+        );
+
+    --gradient-button:
+        linear-gradient(
+            135deg,
+            #66b8ff,
+            #2f82ff
+        );
+
+    --gradient-glass:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.80),
+            rgba(255,255,255,.55)
+        );
+
+    --gradient-light:
+        radial-gradient(
+            circle,
+            rgba(126,187,255,.22),
+            rgba(126,187,255,0)
+        );
+
+/* ==========================================================
+   Glass
+========================================================== */
+
+    --glass-background:
+        rgba(255,255,255,.58);
+
+    --glass-border:
+        rgba(255,255,255,.75);
+
+    --glass-blur:
+        24px;
+
+/* ==========================================================
+   Borders
+========================================================== */
+
+    --border-light:
+        1px solid rgba(215,223,234,.8);
+
+    --border-medium:
+        1px solid rgba(190,205,221,.9);
+
+/* ==========================================================
+   Shadows
+========================================================== */
+
+    --shadow-xs:
+        0 2px 8px rgba(10,30,60,.04);
+
+    --shadow-sm:
+        0 8px 24px rgba(15,30,55,.05);
+
+    --shadow-md:
+        0 18px 48px rgba(15,35,70,.08);
+
+    --shadow-lg:
+        0 40px 100px rgba(15,35,70,.12);
+
+    --shadow-phone:
+        0 70px 140px rgba(22,45,90,.22);
+
+    --shadow-glow:
+        0 0 120px rgba(116,177,255,.28);
+
+/* ==========================================================
+   Border Radius
+========================================================== */
+
+    --radius-xs: 8px;
+    --radius-sm: 14px;
+    --radius-md: 22px;
+    --radius-lg: 34px;
+    --radius-xl: 48px;
+    --radius-pill: 999px;
+
+/* ==========================================================
+   Widths
+========================================================== */
+
+    --container: 1320px;
+    --container-wide: 1480px;
+    --container-narrow: 760px;
+
+/* ==========================================================
+   Spacing
+========================================================== */
+
+    --space-2: .25rem;
+    --space-4: .5rem;
+    --space-8: .75rem;
+    --space-12: 1rem;
+    --space-16: 1.25rem;
+    --space-20: 1.5rem;
+    --space-24: 2rem;
+    --space-32: 3rem;
+    --space-40: 4rem;
+    --space-48: 5rem;
+    --space-64: 7rem;
+    --space-80: 9rem;
+    --space-96: 11rem;
+
+/* ==========================================================
+   Navigation
+========================================================== */
+
+    --nav-height: 84px;
+
+/* ==========================================================
+   Animation
+========================================================== */
+
+    --ease:
+        cubic-bezier(.22,.61,.36,1);
+
+    --transition-fast:
+        .18s var(--ease);
+
+    --transition:
+        .35s var(--ease);
+
+    --transition-slow:
+        .75s var(--ease);
+
+/* ==========================================================
+   Hero
+========================================================== */
+
+    --hero-title:
+        clamp(4rem,10vw,8rem);
+
+    --hero-copy:
+        clamp(1.15rem,1.8vw,1.45rem);
+
+/* ==========================================================
+   Section Titles
+========================================================== */
+
+    --section-title:
+        clamp(2.5rem,5vw,4.5rem);
+
+    --section-copy:
+        clamp(1.1rem,1.6vw,1.3rem);
+
+}
+
+/* ==========================================================
+   Selection
+========================================================== */
+
+::selection{
+
+    background:var(--blue-500);
+    color:white;
+
+}
+
+/* ==========================================================
+   Scrollbar
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--silver-50);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+        var(--blue-400),
+        var(--blue-600)
+    );
+
+    border-radius:999px;
+
+    border:3px solid var(--silver-50);
+
+}
