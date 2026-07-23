@@ -301,3 +301,123 @@ window.scrollToTop = function(){
     });
 
 };
+/*
+==========================================================
+EMAILJS
+==========================================================
+*/
+
+emailjs.init("ErdGvMKURLAY7FaKH");
+
+const modal = document.getElementById("enquiryModal");
+const openButton = document.getElementById("openEnquiry");
+const closeButton = document.getElementById("closeModal");
+
+if(openButton){
+
+    openButton.addEventListener("click",()=>{
+
+        modal.classList.add("active");
+
+    });
+
+}
+
+if(closeButton){
+
+    closeButton.addEventListener("click",()=>{
+
+        modal.classList.remove("active");
+
+    });
+
+}
+
+modal?.addEventListener("click",(event)=>{
+
+    if(event.target===modal){
+
+        modal.classList.remove("active");
+
+    }
+
+});
+
+const form=document.getElementById("enquiryForm");
+
+if(form){
+
+    form.addEventListener("submit",async(event)=>{
+
+        event.preventDefault();
+
+        const submit=document.getElementById("submitButton");
+        const status=document.getElementById("formStatus");
+
+        submit.disabled=true;
+        submit.textContent="Sending...";
+
+        status.textContent="";
+
+        const templateParams={
+
+            name:document.getElementById("name").value.trim(),
+
+            email:document.getElementById("email").value.trim(),
+
+            phone:document.getElementById("phone").value.trim(),
+
+            message:document.getElementById("message").value.trim(),
+
+            submitted:new Date().toLocaleString()
+
+        };
+
+        if(
+            !templateParams.name ||
+            !templateParams.email ||
+            !templateParams.phone ||
+            !templateParams.message
+        ){
+
+            status.textContent="Please complete all fields.";
+
+            submit.disabled=false;
+            submit.textContent="Send Enquiry";
+
+            return;
+
+        }
+
+        try{
+
+            await emailjs.send(
+
+                "service_cdkyhuf",
+
+                "template_0jppt2i",
+
+                templateParams
+
+            );
+
+            status.style.color="#1b8f3c";
+            status.textContent="Thank you. We'll be in touch shortly.";
+
+            form.reset();
+
+        }catch(error){
+
+            console.error(error);
+
+            status.style.color="#c62828";
+            status.textContent="Something went wrong. Please try again.";
+
+        }
+
+        submit.disabled=false;
+        submit.textContent="Send Enquiry";
+
+    });
+
+}
