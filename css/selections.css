@@ -1,0 +1,562 @@
+/* ==========================================================
+   GENERIC SECTION
+========================================================== */
+
+.statement,
+.journey,
+.features,
+.showcase,
+.cta{
+
+    position:relative;
+
+    padding:
+
+        10rem
+        0;
+
+}
+
+.statement::before,
+.features::before,
+.showcase::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(255,255,255,0),
+
+            rgba(240,247,255,.55),
+
+            rgba(255,255,255,0)
+
+        );
+
+}
+
+/* ==========================================================
+   STATEMENT
+========================================================== */
+
+.statement{
+
+    text-align:center;
+
+}
+
+.statement h2{
+
+    max-width:900px;
+
+    margin:
+
+        0 auto
+        2rem;
+
+}
+
+.statement p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    font-size:1.25rem;
+
+}
+
+/* ==========================================================
+   JOURNEY
+========================================================== */
+
+.journey{
+
+    overflow:hidden;
+
+}
+
+.journey h2{
+
+    text-align:center;
+
+    margin-bottom:6rem;
+
+}
+
+.journey-line{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(5,1fr);
+
+    gap:2rem;
+
+    align-items:start;
+
+}
+
+.journey-line::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:10%;
+
+    right:10%;
+
+    top:32px;
+
+    height:2px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            var(--blue-300),
+
+            var(--blue-600)
+
+        );
+
+    opacity:.18;
+
+}
+
+.journey-step{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    z-index:2;
+
+}
+
+.step-number{
+
+    width:64px;
+
+    height:64px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin-bottom:1.5rem;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:var(--blue-600);
+
+    font-weight:700;
+
+    border:
+
+        8px solid
+
+        rgba(238,246,255,.95);
+
+    box-shadow:
+
+        var(--shadow-md);
+
+}
+
+.journey-step h3{
+
+    margin-bottom:.75rem;
+
+    font-size:1.35rem;
+
+}
+
+.journey-step p{
+
+    font-size:1rem;
+
+    max-width:220px;
+
+}
+
+/* ==========================================================
+   FEATURES
+========================================================== */
+
+.features{
+
+    overflow:hidden;
+
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(2,minmax(320px,1fr));
+
+    gap:2.5rem;
+
+}
+
+.feature-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:3rem;
+
+    min-height:320px;
+
+    border-radius:36px;
+
+    background:
+
+        var(--gradient-glass);
+
+    backdrop-filter:
+
+        blur(var(--glass-blur));
+
+    border:
+
+        1px solid
+
+        rgba(255,255,255,.85);
+
+    box-shadow:
+
+        var(--shadow-md);
+
+}
+
+.feature-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    top:-120px;
+
+    right:-100px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(185,225,255,.45),
+
+            rgba(185,225,255,0)
+
+        );
+
+}
+
+.feature-card:hover{
+
+    transform:
+
+        translateY(-10px);
+
+    box-shadow:
+
+        var(--shadow-lg);
+
+}
+
+.feature-card h3{
+
+    margin-bottom:1.25rem;
+
+}
+
+.feature-card p{
+
+    max-width:340px;
+
+}
+
+/* ==========================================================
+   SHOWCASE
+========================================================== */
+
+.showcase{
+
+    text-align:center;
+
+}
+
+.showcase h2{
+
+    max-width:900px;
+
+    margin:
+
+        auto
+        auto
+        2rem;
+
+}
+
+.showcase p{
+
+    max-width:760px;
+
+    margin:auto;
+
+}
+
+.showcase::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+
+    height:900px;
+
+    left:50%;
+
+    bottom:-600px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(188,225,255,.22),
+
+            rgba(188,225,255,0)
+
+        );
+
+}
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.cta{
+
+    text-align:center;
+
+    overflow:hidden;
+
+}
+
+.cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(255,255,255,0),
+
+            rgba(235,246,255,.75),
+
+            rgba(255,255,255,0)
+
+        );
+
+    pointer-events:none;
+
+}
+
+.cta h2{
+
+    margin-bottom:1.5rem;
+
+}
+
+.cta p{
+
+    max-width:700px;
+
+    margin:
+
+        0 auto
+        3rem;
+
+}
+
+/* ==========================================================
+   GLASS PANEL
+========================================================== */
+
+.glass-panel{
+
+    background:
+
+        rgba(255,255,255,.55);
+
+    backdrop-filter:
+
+        blur(26px);
+
+    border:
+
+        1px solid
+
+        rgba(255,255,255,.82);
+
+    border-radius:42px;
+
+    box-shadow:
+
+        var(--shadow-lg);
+
+}
+
+/* ==========================================================
+   DECORATIVE ORBS
+========================================================== */
+
+.section-orb{
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    filter:blur(80px);
+
+    opacity:.45;
+
+}
+
+.section-orb.left{
+
+    top:0;
+
+    left:-260px;
+
+    background:
+
+        rgba(170,220,255,.35);
+
+}
+
+.section-orb.right{
+
+    bottom:0;
+
+    right:-240px;
+
+    background:
+
+        rgba(220,240,255,.5);
+
+}
+
+/* ==========================================================
+   DIVIDER
+========================================================== */
+
+.wave-divider{
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-1px;
+
+    width:100%;
+
+    height:140px;
+
+    overflow:hidden;
+
+}
+
+.wave-divider svg{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+}
+
+/* ==========================================================
+   LARGE DISPLAY TEXT
+========================================================== */
+
+.display-text{
+
+    font-size:
+
+        clamp(4rem,10vw,8rem);
+
+    font-weight:800;
+
+    line-height:.9;
+
+    letter-spacing:-.06em;
+
+    text-align:center;
+
+    color:var(--text-primary);
+
+}
+
+.display-text span{
+
+    display:block;
+
+}
