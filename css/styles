@@ -1,0 +1,589 @@
+/* ==========================================================
+   RESET
+========================================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+body{
+    font-family:var(--font-primary);
+    color:var(--text-primary);
+    background:var(--gradient-background);
+    overflow-x:hidden;
+    min-height:100vh;
+    text-rendering:optimizeLegibility;
+}
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font:inherit;
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+section{
+    position:relative;
+}
+
+.container{
+    width:min(92%,var(--container));
+    margin-inline:auto;
+}
+
+.container.narrow{
+    max-width:var(--container-narrow);
+}
+
+.container.wide{
+    max-width:var(--container-wide);
+}
+
+/* ==========================================================
+   BACKGROUND
+========================================================== */
+
+.background-grid{
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.45;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,0),
+            rgba(255,255,255,.65)
+        ),
+
+        linear-gradient(
+            rgba(205,220,240,.16) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(205,220,240,.16) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        cover,
+        64px 64px,
+        64px 64px;
+
+    z-index:-3;
+
+}
+
+.background-glow{
+
+    position:fixed;
+    border-radius:50%;
+    filter:blur(120px);
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+.glow-left{
+
+    width:700px;
+    height:700px;
+
+    top:-180px;
+    left:-220px;
+
+    background:rgba(140,200,255,.28);
+
+}
+
+.glow-right{
+
+    width:650px;
+    height:650px;
+
+    bottom:-220px;
+    right:-200px;
+
+    background:rgba(225,241,255,.65);
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.site-header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:var(--nav-height);
+
+    z-index:1000;
+
+    backdrop-filter:blur(24px);
+
+    background:rgba(255,255,255,.58);
+
+    border-bottom:var(--border-light);
+
+    transition:var(--transition);
+
+}
+
+.site-header.scrolled{
+
+    background:rgba(255,255,255,.82);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.nav-container{
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    font-size:1.35rem;
+
+    font-weight:800;
+
+    letter-spacing:-.04em;
+
+}
+
+.desktop-nav{
+
+    display:flex;
+
+    gap:3rem;
+
+    align-items:center;
+
+}
+
+.desktop-nav a{
+
+    position:relative;
+
+    color:var(--text-secondary);
+
+    font-weight:500;
+
+    transition:var(--transition-fast);
+
+}
+
+.desktop-nav a:hover{
+
+    color:var(--text-primary);
+
+}
+
+.desktop-nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    border-radius:99px;
+
+    background:var(--blue-500);
+
+    transition:var(--transition);
+
+}
+
+.desktop-nav a:hover::after{
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.7rem;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    user-select:none;
+
+}
+
+.button-primary{
+
+    color:white;
+
+    background:var(--gradient-button);
+
+    box-shadow:
+
+        0 20px 50px rgba(53,133,255,.25);
+
+}
+
+.button-primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 32px 65px rgba(53,133,255,.34);
+
+}
+
+.button-secondary{
+
+    color:var(--blue-600);
+
+    background:white;
+
+    border:var(--border-light);
+
+    backdrop-filter:blur(16px);
+
+}
+
+.button-secondary:hover{
+
+    background:var(--sky-50);
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+
+h1,
+h2,
+h3,
+h4{
+
+    letter-spacing:-.05em;
+
+    line-height:.96;
+
+    font-weight:800;
+
+}
+
+h2{
+
+    font-size:var(--section-title);
+
+    margin-bottom:1.5rem;
+
+}
+
+h3{
+
+    font-size:1.5rem;
+
+}
+
+p{
+
+    line-height:1.8;
+
+    color:var(--text-secondary);
+
+    font-size:var(--section-copy);
+
+}
+
+/* ==========================================================
+   SECTION SPACING
+========================================================== */
+
+.statement,
+.journey,
+.features,
+.showcase,
+.cta{
+
+    padding:
+
+        var(--space-96)
+
+        0;
+
+}
+
+/* ==========================================================
+   FEATURE GRID
+========================================================== */
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(2,1fr);
+
+    gap:2rem;
+
+}
+
+.feature-card{
+
+    padding:42px;
+
+    border-radius:var(--radius-lg);
+
+    background:var(--gradient-glass);
+
+    backdrop-filter:
+
+        blur(var(--glass-blur));
+
+    border:
+
+        1px solid rgba(255,255,255,.82);
+
+    box-shadow:
+
+        var(--shadow-md);
+
+    transition:var(--transition);
+
+}
+
+.feature-card:hover{
+
+    transform:
+
+        translateY(-10px);
+
+    box-shadow:
+
+        var(--shadow-lg);
+
+}
+
+.feature-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+/* ==========================================================
+   JOURNEY
+========================================================== */
+
+.journey-line{
+
+    margin-top:5rem;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:2rem;
+
+    flex-wrap:wrap;
+
+}
+
+.journey-step{
+
+    flex:1;
+
+    min-width:160px;
+
+    padding:2rem;
+
+    text-align:center;
+
+}
+
+.step-number{
+
+    width:64px;
+
+    height:64px;
+
+    margin:auto auto 1.25rem;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    color:var(--blue-600);
+
+    background:var(--sky-50);
+
+    font-weight:700;
+
+    box-shadow:
+
+        var(--shadow-sm);
+
+}
+
+/* ==========================================================
+   SHOWCASE
+========================================================== */
+
+.showcase{
+
+    text-align:center;
+
+}
+
+.showcase p{
+
+    max-width:760px;
+
+    margin:auto;
+
+}
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.cta{
+
+    text-align:center;
+
+}
+
+.cta p{
+
+    margin:
+
+        1rem auto 2.5rem;
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer{
+
+    padding:
+
+        5rem 0;
+
+    border-top:
+
+        var(--border-light);
+
+    background:
+
+        rgba(255,255,255,.65);
+
+    backdrop-filter:
+
+        blur(20px);
+
+}
+
+.footer-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:4rem;
+
+    align-items:flex-start;
+
+}
+
+.footer-container h3{
+
+    margin-bottom:.75rem;
+
+}
+
+.footer-container a{
+
+    display:block;
+
+    color:var(--text-secondary);
+
+    margin-bottom:.6rem;
+
+    transition:var(--transition-fast);
+
+}
+
+.footer-container a:hover{
+
+    color:var(--blue-600);
+
+}
