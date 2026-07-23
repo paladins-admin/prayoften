@@ -1,0 +1,603 @@
+/* ==========================================================
+   GLOBAL TRANSITIONS
+========================================================== */
+
+*{
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+/* ==========================================================
+   FADE UP
+========================================================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:
+        translateY(60px);
+
+    transition:
+
+        opacity .9s var(--ease),
+        transform .9s var(--ease);
+
+}
+
+.fade-up.visible{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+/* ==========================================================
+   FADE LEFT
+========================================================== */
+
+.fade-left{
+
+    opacity:0;
+
+    transform:
+
+        translateX(-70px);
+
+    transition:
+
+        opacity .9s var(--ease),
+        transform .9s var(--ease);
+
+}
+
+.fade-left.visible{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+/* ==========================================================
+   FADE RIGHT
+========================================================== */
+
+.fade-right{
+
+    opacity:0;
+
+    transform:
+
+        translateX(70px);
+
+    transition:
+
+        opacity .9s var(--ease),
+        transform .9s var(--ease);
+
+}
+
+.fade-right.visible{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+/* ==========================================================
+   SCALE
+========================================================== */
+
+.scale-in{
+
+    opacity:0;
+
+    transform:
+
+        scale(.92);
+
+    transition:
+
+        opacity .9s var(--ease),
+        transform .9s var(--ease);
+
+}
+
+.scale-in.visible{
+
+    opacity:1;
+
+    transform:
+
+        scale(1);
+
+}
+
+/* ==========================================================
+   HERO TITLE
+========================================================== */
+
+.hero h1 span{
+
+    animation:
+
+        heroReveal .9s forwards;
+
+    animation-timing-function:
+
+        cubic-bezier(.19,1,.22,1);
+
+}
+
+.hero h1 span:nth-child(1){
+
+    animation-delay:.1s;
+
+}
+
+.hero h1 span:nth-child(2){
+
+    animation-delay:.28s;
+
+}
+
+.hero h1 span:nth-child(3){
+
+    animation-delay:.46s;
+
+}
+
+@keyframes heroReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(55px);
+
+        filter:
+
+            blur(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0);
+
+        filter:
+
+            blur(0);
+
+    }
+
+}
+
+/* ==========================================================
+   HERO COPY
+========================================================== */
+
+.hero-copy{
+
+    opacity:0;
+
+    animation:
+
+        copyReveal 1.1s forwards;
+
+    animation-delay:.75s;
+
+}
+
+@keyframes copyReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.hero-buttons{
+
+    opacity:0;
+
+    animation:
+
+        copyReveal 1.1s forwards;
+
+    animation-delay:.95s;
+
+}
+
+/* ==========================================================
+   PHONE ENTRANCE
+========================================================== */
+
+.phone{
+
+    opacity:0;
+
+    animation:
+
+        phoneEnter 1.6s forwards;
+
+    animation-delay:.5s;
+
+}
+
+@keyframes phoneEnter{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+
+            translateY(80px)
+            rotate(8deg)
+            scale(.9);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0)
+            rotate(0)
+            scale(1);
+
+    }
+
+}
+
+/* ==========================================================
+   PRAYER CARDS
+========================================================== */
+
+.prayer-card{
+
+    animation:
+
+        cardFloat 8s ease-in-out infinite;
+
+}
+
+.prayer-card:nth-child(2){
+
+    animation-delay:1s;
+
+}
+
+.prayer-card:nth-child(3){
+
+    animation-delay:2.5s;
+
+}
+
+@keyframes cardFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   BACKGROUND GLOWS
+========================================================== */
+
+.background-glow{
+
+    animation:
+
+        glowMove 18s ease-in-out infinite;
+
+}
+
+.glow-right{
+
+    animation-delay:6s;
+
+}
+
+@keyframes glowMove{
+
+    0%{
+
+        transform:
+
+            translate(0,0)
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+
+            translate(50px,-30px)
+            scale(1.08);
+
+    }
+
+    100%{
+
+        transform:
+
+            translate(0,0)
+            scale(1);
+
+    }
+
+}
+
+/* ==========================================================
+   FEATURE CARDS
+========================================================== */
+
+.feature-card{
+
+    transform-style:
+
+        preserve-3d;
+
+}
+
+.feature-card:hover{
+
+    transform:
+
+        perspective(1000px)
+        rotateX(3deg)
+        rotateY(-3deg)
+        translateY(-12px);
+
+}
+
+/* ==========================================================
+   JOURNEY STEPS
+========================================================== */
+
+.journey-step{
+
+    transition:
+
+        transform .45s var(--ease);
+
+}
+
+.journey-step:hover{
+
+    transform:
+
+        translateY(-10px);
+
+}
+
+.journey-step:hover .step-number{
+
+    transform:
+
+        scale(1.12);
+
+    background:
+
+        var(--gradient-button);
+
+    color:white;
+
+    box-shadow:
+
+        0 20px 40px rgba(60,140,255,.35);
+
+}
+
+/* ==========================================================
+   BUTTON HOVER
+========================================================== */
+
+.button{
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.button::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            120deg,
+
+            transparent,
+
+            rgba(255,255,255,.35),
+
+            transparent
+
+        );
+
+    transform:
+
+        translateX(-150%);
+
+}
+
+.button:hover::after{
+
+    animation:
+
+        shine .9s forwards;
+
+}
+
+@keyframes shine{
+
+    to{
+
+        transform:
+
+            translateX(150%);
+
+    }
+
+}
+
+/* ==========================================================
+   PARALLAX READY
+========================================================== */
+
+.parallax{
+
+    will-change:
+
+        transform;
+
+}
+
+/* ==========================================================
+   FLOAT
+========================================================== */
+
+.float{
+
+    animation:
+
+        gentleFloat 7s ease-in-out infinite;
+
+}
+
+@keyframes gentleFloat{
+
+    0%{
+
+        transform:
+
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+
+            translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:
+
+            translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   SPIN SLOW
+========================================================== */
+
+.spin-slow{
+
+    animation:
+
+        spinSlow 80s linear infinite;
+
+}
+
+@keyframes spinSlow{
+
+    from{
+
+        transform:rotate(0);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+*,
+*::before,
+*::after{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+
+}
+
+}
