@@ -1,0 +1,448 @@
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (max-width: 1440px){
+
+    .container{
+        width:min(94%, var(--container));
+    }
+
+    .hero{
+        gap:5rem;
+    }
+
+    .phone{
+        width:320px;
+        height:650px;
+    }
+
+}
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (max-width: 1200px){
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:5rem;
+
+        padding-top:calc(var(--nav-height) + 4rem);
+
+    }
+
+    .hero-content{
+
+        margin:auto;
+
+    }
+
+    .hero-copy{
+
+        margin-inline:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .phone-stage{
+
+        order:2;
+
+    }
+
+    .journey-line{
+
+        grid-template-columns:repeat(5,1fr);
+
+        gap:1.5rem;
+
+    }
+
+    .feature-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 992px){
+
+    .desktop-nav{
+
+        display:none;
+
+    }
+
+    .nav-button{
+
+        display:none;
+
+    }
+
+    .hero{
+
+        min-height:auto;
+
+        padding:
+
+            calc(var(--nav-height) + 2rem)
+            6vw
+            5rem;
+
+    }
+
+    .hero h1{
+
+        font-size:clamp(3.8rem,11vw,5.8rem);
+
+    }
+
+    .statement,
+    .journey,
+    .features,
+    .showcase,
+    .cta{
+
+        padding:7rem 0;
+
+    }
+
+    .feature-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .feature-card{
+
+        min-height:auto;
+
+    }
+
+    .journey-line{
+
+        grid-template-columns:1fr;
+
+        max-width:520px;
+
+        margin:auto;
+
+        gap:2rem;
+
+    }
+
+    .journey-line::before{
+
+        display:none;
+
+    }
+
+    .journey-step{
+
+        padding:2rem;
+
+        border-radius:28px;
+
+        background:rgba(255,255,255,.72);
+
+        backdrop-filter:blur(18px);
+
+        border:var(--border-light);
+
+        box-shadow:var(--shadow-sm);
+
+    }
+
+    .footer-container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        align-items:center;
+
+        gap:2.5rem;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px){
+
+    :root{
+
+        --hero-title:clamp(3rem,14vw,4.5rem);
+
+        --section-title:clamp(2.2rem,10vw,3.4rem);
+
+        --section-copy:1.05rem;
+
+    }
+
+    .container{
+
+        width:min(92%,100%);
+
+    }
+
+    .hero{
+
+        gap:4rem;
+
+    }
+
+    .hero-label{
+
+        font-size:.68rem;
+
+        letter-spacing:.14em;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .button{
+
+        width:100%;
+
+    }
+
+    .phone{
+
+        width:290px;
+
+        height:590px;
+
+        border-radius:44px;
+
+    }
+
+    .phone-screen{
+
+        border-radius:34px;
+
+        padding:2rem 1.2rem;
+
+    }
+
+    .phone-notch{
+
+        width:115px;
+
+        height:24px;
+
+    }
+
+    .screen-title{
+
+        font-size:1.2rem;
+
+    }
+
+    .prayer-card{
+
+        padding:1.2rem;
+
+    }
+
+    .feature-card{
+
+        padding:2rem;
+
+        border-radius:28px;
+
+    }
+
+    .statement p,
+    .showcase p,
+    .cta p{
+
+        font-size:1.05rem;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px){
+
+    .site-header{
+
+        height:72px;
+
+    }
+
+    .logo{
+
+        font-size:1.15rem;
+
+    }
+
+    .hero{
+
+        padding-top:6rem;
+
+    }
+
+    .hero-copy{
+
+        font-size:1rem;
+
+    }
+
+    .phone{
+
+        width:250px;
+
+        height:520px;
+
+    }
+
+    .phone-screen{
+
+        padding:1.6rem 1rem;
+
+    }
+
+    .screen-title{
+
+        font-size:1.05rem;
+
+    }
+
+    .screen-subtitle{
+
+        font-size:.8rem;
+
+    }
+
+    .prayer-card h3{
+
+        font-size:.95rem;
+
+    }
+
+    .step-number{
+
+        width:56px;
+
+        height:56px;
+
+        font-size:.9rem;
+
+    }
+
+    .feature-card h3{
+
+        font-size:1.3rem;
+
+    }
+
+    .footer-container{
+
+        gap:2rem;
+
+    }
+
+}
+
+/* ==========================================================
+   ULTRA WIDE
+========================================================== */
+
+@media (min-width: 1800px){
+
+    .hero{
+
+        max-width:1700px;
+
+        margin:auto;
+
+    }
+
+    .statement,
+    .journey,
+    .features,
+    .showcase,
+    .cta{
+
+        max-width:1700px;
+
+        margin:auto;
+
+    }
+
+}
+
+/* ==========================================================
+   LANDSCAPE PHONES
+========================================================== */
+
+@media (max-height:700px) and (orientation:landscape){
+
+    .hero{
+
+        min-height:auto;
+
+        padding-top:7rem;
+
+        padding-bottom:5rem;
+
+    }
+
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print{
+
+    .background-grid,
+    .background-glow,
+    .phone,
+    .hero-buttons,
+    .site-header{
+
+        display:none !important;
+
+    }
+
+    body{
+
+        background:#fff;
+
+        color:#000;
+
+    }
+
+}
